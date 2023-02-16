@@ -3,11 +3,33 @@ import styles from './Register.module.css';
 import { useState, useEffect } from 'react';
 
 const Register = () => {
+  const [displayName, setDisplayName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confimrPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    setError("");
+
+    const user = {
+      displayName,
+      email, 
+      password
+    }
+
+    if(password !== confimrPassword) {
+      setError("The passwords need to be the same")
+    }
+  }
+
   return (
     <div className={styles.register}>
       <h1>Register to post your projects!</h1>
 
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           <span>Fullname:</span>
           <input 
@@ -15,6 +37,8 @@ const Register = () => {
             name='displayName'
             required
             placeholder='Username'
+            value={displayName}
+            onChange={(e) => setDisplayName(e.target.value)}
           />
         </label>
 
@@ -25,6 +49,8 @@ const Register = () => {
             name='email'
             required
             placeholder='Type your email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </label>
 
@@ -35,6 +61,8 @@ const Register = () => {
             name='password'
             required
             placeholder='Type your password'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </label>
         
@@ -45,10 +73,14 @@ const Register = () => {
             name='passwordConfirm'
             required
             placeholder='Confirm your email'
+            value={confimrPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
           />
         </label>
 
         <button className='btn'>Register</button>
+
+        {error && <p>{error}</p>}
       </form>
     </div>
   )

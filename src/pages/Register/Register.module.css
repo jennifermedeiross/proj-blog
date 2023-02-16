@@ -5,3 +5,8 @@
 .register h1 {
   color: #77878B;
 }
+
+.register p {
+  color: #305252;
+  font-size: 1.2em;
+}
