@@ -7,14 +7,13 @@
 }
 
 .brand {
-  font-size: 3em;
-  font-family: 'Amatic SC', cursive;
+  font-size: 2em;
   text-decoration: none;
   color: #305252;
 }
 
 .brand span {
-  font-weight: 900;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
