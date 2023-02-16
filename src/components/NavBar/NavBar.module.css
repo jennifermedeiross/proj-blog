@@ -1,4 +1,40 @@
 .navBar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, .15) 0px 1px 10px 0px;
+  padding: .5em 2em;
+}
+
+.brand {
+  font-size: 3em;
+  font-family: 'Amatic SC', cursive;
+  text-decoration: none;
+  color: #305252;
+}
+
+.brand span {
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.links_list {
+  display: flex;
+  list-style: none;
+}
+
+.links_list li {
+  margin-right: 1em;
+  font-size: 1.2em;
+}
+
+.links_list li a {
+  padding: .4em .6em;
+  text-decoration: none;
+}
+
+.active {
+  background-color: #305252;
+  color: #fff;
+  border-radius: 10px;
 }
