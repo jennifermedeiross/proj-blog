@@ -5,7 +5,7 @@ import { useAuthentication } from './hooks/useAuthentication';
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-import { AuthProvider } from './context/AuthContext';
+import { AuthProvider } from './contexts/AuthContext';
 import { onAuthStateChanged } from 'firebase/auth';
 
 import Footer from "./components/Footer";
@@ -26,7 +26,8 @@ function App() {
   useEffect(() => {
 
     onAuthStateChanged(auth, (user) => {
-      setUser(user)
+      setUser(user);
+      console.log(user)
     })
 
   }, [auth])
@@ -37,7 +38,7 @@ function App() {
 
   return (
     <div className="App">
-      <AuthProvider value={user}>
+      <AuthProvider value={ user }>
         <BrowserRouter>
           <NavBar />
           <div className="container">
