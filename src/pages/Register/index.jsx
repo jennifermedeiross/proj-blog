@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 const Register = () => {
   return (
-    <div>
+    <div className={styles.register}>
       <h1>Register to post your projects!</h1>
 
       <form>
@@ -37,6 +37,18 @@ const Register = () => {
             placeholder='Type your password'
           />
         </label>
+        
+        <label>
+          <span>Password confirmation:</span>
+          <input 
+            type='password'
+            name='passwordConfirm'
+            required
+            placeholder='Confirm your email'
+          />
+        </label>
+
+        <button className='btn'>Register</button>
       </form>
     </div>
   )
